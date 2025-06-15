@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Sweetest Soul</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffe6eb;
+      overflow-x: hidden;
+    }
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 10s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+    .container {
+      text-align: center;
+      max-width: 800px;
+      padding: 20px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      margin: 40px auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .container.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .button {
+      background-color: #ff4d6d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 999px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #e8435f;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+    .split {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+    .split img {
+      flex: 1 1 45%;
+      border-radius: 15px;
+    }
+    .split .text {
+      flex: 1 1 45%;
+      text-align: left;
+    }
+    .poem-img,
+    .final-img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <div id="page1" class="container show">
+    <h1>To My Dearest Love ❤️</h1>
+    <p>
+      Since you came into my life, everything has felt brighter. Like a sunrise that softly kisses the earth awake,
+      your love awakens every dormant part of my heart. I find myself smiling more, breathing deeper, and loving harder.
+    </p>
+    <p>
+      This isn't just a note, it's my heart spilled into words, longing to be with yours. With each beat, it whispers your name.
+      Let me take your hand for a night not just of memories, but of magic only our hearts could create.
+    </p>
+    <button class="button" onclick="showPage(2)">Open your heart 💌</button>
+  </div>
+
+  <div id="page2" class="container" style="display: none;">
+    <h2>Moments I Cherish 💖</h2>
+    <div class="split">
+      <img src="76482090-7b3c-4ac6-a71c-64edcead97fd.jpg" alt="Split Photo">
+      <div class="text">
+        <p>
+          In this photograph lives a little infinity  one that holds laughter, silliness, warmth, and love.
+          The way your eyes sparkle, the joy you radiate, and the comfort I feel just being beside you...
+          I am endlessly thankful.
+        </p>
+        <p>
+          I don’t need a perfect moment just a moment with you. You are my favorite kind of always.
+        </p>
+      </div>
+    </div>
+    <button class="button" onclick="showPage(3)">One more sweet thing 🌹</button>
+  </div>
+
+  <div id="page3" class="container" style="display: none;">
+    <h2>A Sunday Night to Remember 🌃</h2>
+    <p>
+      Next <strong>Sunday night</strong>, I want to steal you away for an evening wrapped in love and light.
+      An <strong>AYCE date at Hanamasa Blok M</strong> awaits us where we'll laugh between bites,
+      savor endless flavors, and make a feast of memories together.
+    </p>
+    <p>
+      After our joyful meal, let's take a gentle stroll under the night sky,
+      letting our hearts guide the way and our love light each step.
+    </p>
+    <p><em>Because with you, even silence becomes poetry, and every step feels like a love song.</em></p>
+    <button class="button" onclick="showPage(4)">Before we go... 💞</button>
+  </div>
+
+  <div id="page4" class="container" style="display: none;">
+    <h2>A Poem for You 🌸</h2>
+    <img src="WhatsApp Image 2025-06-15 at 16.41.12.jpeg" alt="Poem Photo" class="poem-img">
+    <p>
+      In quiet nights and moonlit grace,<br />
+      I dream of you, your soft embrace.<br />
+      Your smile, a light that warms my way,<br />
+      Your love, my sun through cloudy days.
+    </p>
+    <p>
+      A thousand stars could never gleam,<br />
+      As bright as you within my dream.<br />
+      You are my heart, my sweetest muse,<br />
+      In every breath, it’s you I choose.
+    </p>
+    <p>
+      So hold my hand, let’s write our song,<br />
+      A love that’s gentle, deep, and strong.<br />
+      With every step, with every glance,<br />
+      You give this life its sweetest dance.
+    </p>
+    <button class="button" onclick="showPage(5)">One last thing, my love 💌</button>
+  </div>
+
+  <div id="page5" class="container" style="display: none;">
+    <h2>I Love Every Moment With You 🥰</h2>
+    <img src="WhatsApp Image 2025-06-15 at 17.04.00.jpeg" alt="Cherished Moment" class="final-img">
+    <p>
+      I love every moment with you, no matter how small it is.  
+      Your presence fills my world with warmth, and I would choose this us again and again.
+    </p>
+    <button class="button">Forever Yours ❤️</button>
+  </div>
+
+  <script>
+    function showPage(pageNumber) {
+      for (let i = 1; i <= 5; i++) {
+        const page = document.getElementById(`page${i}`);
+        page.style.display = i === pageNumber ? 'block' : 'none';
+        if (i === pageNumber) {
+          setTimeout(() => page.classList.add('show'), 50);
+        } else {
+          page.classList.remove('show');
+        }
+      }
+    }
+
+    const heartsContainer = document.getElementById('hearts');
+    for (let i = 0; i < 40; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      heartsContainer.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
